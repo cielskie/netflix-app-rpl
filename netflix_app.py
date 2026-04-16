@@ -1,16 +1,22 @@
-def f(a, b):
-    if b == 1:
-        print("Play " + a)
-    elif b == 2:
-        print("Add " + a + " to fav")
-    else:
-        print("Error")
+def play_movie(title):
+    print(f"Play {title}")
 
-def p(x):
-    for i in range(len(x)):
-        print(x[i])
+def add_to_favorite(title):
+    print(f"Add {title} to favorite")
+
+def show_movies(movie_list):
+    for movie in movie_list:
+        print(movie)
+
+def handle_user_action(title, action):
+    if action == "PLAY":
+        play_movie(title)
+    elif action == "FAVORITE":
+        add_to_favorite(title)
+    else:
+        print("Invalid action")
 
 movies = ["Wednesday", "Stranger Things", "Money Heist"]
 
-p(movies)
-f("Wednesday", 1)
+show_movies(movies)
+handle_user_action("Wednesday", "PLAY")
